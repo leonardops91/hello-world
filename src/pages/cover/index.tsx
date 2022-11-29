@@ -19,7 +19,7 @@ type CoverProps = {
 export default function Cover(props: CoverProps) {
 
   return (
-    <section className="relative flex flex-col items-center justify-around h-[100vh] z-10">
+    <section className="relative flex flex-col items-center justify-around max-w-[80%] w-full m-auto h-[100vh] z-10">
       <PageColorMenu setPageColor={props.setPageColor}/>
       <div className="flex items-center flex-col">
         <img

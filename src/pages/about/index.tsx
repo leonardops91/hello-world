@@ -2,6 +2,9 @@ import { Strategy, Student, Flask } from "phosphor-react";
 import { Spreader } from "../../components/spreader";
 import { Text } from "../../components/textComponent";
 import { GetUserInfoQuery } from "../../graphql/generated";
+import { format, isDate } from 'date-fns'
+import { useEffect } from "react";
+import { TypeInfo } from "graphql";
 
 type AboutProps = {
   colorClass: string
@@ -38,19 +41,19 @@ export default function About(props: AboutProps) {
   };
 
   return (
-    <div className="container relative w-full h-full">
+    <div className="relative w-full h-full">
       <Spreader colorClass={props.colorClass} />
       <section
         id="about"
-        className={`flex flex-col gap-4 items-start relative m-auto max-w-screen-xl w-full h-[110vh] py-6 overflow-hidden`}
+        className={`container flex flex-col gap-4 items-start relative max-w-[80%] w-full m-auto h-[110vh] py-6 `}
       >
-        <Text variant="title" content="About" className="" />
+        <Text variant="title" content="About" className="backdrop-blur-sm backdrop-brightness-95" />
         <div className="flex flex-col w-full items-baseline">
           <header className="flex items-center justify-center gap-4">
             <Strategy size={32} />
             <Text variant="subtitle" content="Background" />
           </header>
-          <main className="w-full ">
+          <main className="w-full backdrop-blur-sm backdrop-brightness-95">
             <Text variant="small" content={userBackground.careerDescription} />
           </main>
         </div>
@@ -59,7 +62,7 @@ export default function About(props: AboutProps) {
             <Student size={32} />
             <Text variant="subtitle" content="General Education" />
           </header>
-          <main className="flex flex-col-reverse gap-4 w-full ">
+          <main className="flex flex-col-reverse gap-4 w-full backdrop-blur-sm backdrop-brightness-95">
             <ul>
               {userBackground.education?.map((course) => {
                 return (
@@ -71,12 +74,12 @@ export default function About(props: AboutProps) {
                     (
                     <Text
                       variant="small"
-                      content={course.initialDate.toString()}
+                      content={format(new Date(course.initialDate), "MMMM/yyyy")}
                     />{" "}
                     -{" "}
                     <Text
                       variant="small"
-                      content={course.endDate?.toString()}
+                      content={format(new Date(course.endDate?.toString() || ""), "MMMM/yyyy")}
                     />
                     )
                   </li>
@@ -90,7 +93,7 @@ export default function About(props: AboutProps) {
             <Flask size={32} />
             <Text variant="subtitle" content="IT Experience" />
           </header>
-          <main className="flex flex-col-reverse gap-4 w-full ">
+          <main className="flex flex-col-reverse gap-4 w-full backdrop-blur-sm backdrop-brightness-95">
             <ul>
               {userBackground.experiences?.map((experience) => {
                 return (
@@ -113,14 +116,14 @@ export default function About(props: AboutProps) {
                         ▪ Period -
                         <Text
                           variant="small"
-                          content={experience.startDate.toString()}
+                          content={format(new Date(experience.startDate.toString()), "MMMM/yyyy")}
                         />
                         -
                         <Text
                           variant="small"
                           content={
                             experience.endDate
-                              ? experience.endDate?.toString()
+                              ? format(new Date(experience.endDate?.toString() || ""), "MMMM/yyyy")
                               : "Current"
                           }
                         />

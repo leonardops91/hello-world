@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import { DesktopTower, NotePencil } from "phosphor-react";
 import { useState } from "react";
 import ReloadButton from "../../components/reloadButton";
@@ -55,7 +56,7 @@ export default function Education(props: EducationProps){
         className={`bg-space bg-no-repeat bg-cover  before:absolute before:w-full before:h-[110vh] ${colorClass} ${props.themeClass} `}
       >
         <div
-          className={`flex gap-4 flex-col py-6 relative m-auto max-w-screen-xl w-full h-[110vh]`}
+          className={`flex gap-4 flex-col py-6 relative max-w-[80%] w-full m-auto h-[110vh]`}
         >
           <Text variant="title" content="IT Education" className="mb-1" />
           <div className="flex flex-col items-start">
@@ -75,12 +76,12 @@ export default function Education(props: EducationProps){
                       (
                       <Text
                         variant="small"
-                        content={course.startDate.toString()}
+                        content={format(new Date(course.startDate.toString()), "MMMM/yyyy")}
                       />
                       -
                       <Text
                         variant="small"
-                        content={course.endDate?.toString()}
+                        content={format(new Date(course.endDate?.toString() || ""), "MMMM/yyyy")}
                       />
                       )
                       <Text

@@ -26,13 +26,13 @@ export default function Projects(props: ProjectsProps){
     return (
       <section
         id={props.id}
-        className="w-screen h-[110vh] py-6 flex flex-col items-center"
+        className="max-w-[80%] w-full m-auto h-[110vh] py-6 flex flex-col items-center"
       >
-        <div className="flex gap-4 flex-col items-center max-w-screen-xl w-full h-[100%]">
+        <div className="flex gap-4 flex-col items-center max-w-screen-xl w-full h-[80%]">
           <header>
             <Text variant="title" content="Projects" />
           </header>
-          <main className="grid gap-4 grid-cols-2 h-[85%] w-fit overflow-auto scrollbar-hide">
+          <main className="xl:grid gap-4 xl:grid-cols-2 xl:h-[100%] w-fit overflow-auto  flex flex-col">
             {projectsInfo.projects.map(cardInfo => {
                 return <Card key={cardInfo.name} snapURL={cardInfo.snapURL || ""} title={cardInfo.name} type={cardInfo.type} description={cardInfo.description} repositoryURL={cardInfo.projectRepositoryURL} previewURL={cardInfo.projectpreviewURL || ""}  />
             })}

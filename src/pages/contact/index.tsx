@@ -43,7 +43,7 @@ export default function Contact(props: ContactProps){
       className={`bg-nature bg-no-repeat bg-cover h-[93vh] before:absolute before:w-full before:h-[93vh] ${colorClass} ${props.themeClass} `}
     >
       <div
-        className={`flex flex-col justify-evenly items-center py-6 relative text-center m-auto max-w-screen-xl w-full h-[90vh] border-b-1 `}
+        className={`flex flex-col justify-evenly items-center py-6 relative text-center max-w-[80%] w-full m-auto h-[90vh] border-b-1 `}
       >
         <div className="flex flex-col ">
           <header className="flex items-center justify-center mb-14">

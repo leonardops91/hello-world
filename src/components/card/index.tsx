@@ -14,7 +14,7 @@ export default function Card(props: CardProps) {
     return (
       <div
         id="card"
-        className={`flex group items-center  h-[95%] w-full justify-center transition-all duration-[.25s] ease-linear overflow-hidden relative rounded-3xl 
+        className={`flex group items-center min-h-[50%] h-[100%] w-full justify-center transition-all duration-[.25s] ease-linear overflow-hidden relative rounded-lg
         group-hover:scale-100 group-hover:after:h-full after:w-full after:left-0 after:right-0 after:absolute after:bg-gradient-to-b after:from-transparent after:to-gray-800 after:z-20 after:transition-all after:duration-[.25s] after:ease-linear`}
       >
         <img
@@ -27,7 +27,7 @@ export default function Card(props: CardProps) {
         />
         <div
           id="context"
-          className="flex flex-col items-center justify-center gap-7 w-full h-20 hover:h-full transition-all z-30 absolute text-white py-[10px] bg-black bg-opacity-70"
+          className="flex flex-col items-center justify-center gap-7 px-4 w-full h-20 hover:h-full transition-all z-30 absolute text-white py-[10px] bg-black bg-opacity-70"
         >
           <header className=" flex gap-3 items-center justify-center w-full text-center">
             <Text variant="outlined" content={props.title} className="w-max" />{" "}
