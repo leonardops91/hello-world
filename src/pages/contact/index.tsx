@@ -40,21 +40,21 @@ export default function Contact(props: ContactProps){
   return (
     <section
       id={props.id}
-      className={`bg-nature bg-no-repeat bg-cover h-[93vh] before:absolute before:w-full before:h-[93vh] ${colorClass} ${props.themeClass} `}
+      className={`bg-nature bg-no-repeat bg-cover min-h-[93vh] h-fit before:absolute before:w-full before:h-[93vh] ${colorClass} ${props.themeClass} `}
     >
       <div
-        className={`flex flex-col justify-evenly items-center py-6 relative text-center max-w-[80%] w-full m-auto h-[90vh] border-b-1 `}
+        className={`flex flex-col justify-center items-center py-6 relative text-center max-w-[80%] w-full m-auto min-h-[90vh] h-fit border-b-1 `}
       >
         <div className="flex flex-col ">
-          <header className="flex items-center justify-center mb-14">
+          <header className="flex items-center justify-center mb-6">
             <Text variant="title" content="Future" />
           </header>
           <main className="flex justify-center h-full w-full">
             <Text content={contactInfo.objective} />
           </main>
         </div>
-        <Text variant="title" content="Contact" className="" />
-        <div className="flex justify-center gap-7  items-start ">
+        <Text variant="title" content="Contact" className="mb-6" />
+        <div className="flex flex-col justify-center gap-7  items-start md:flex-row">
           {contactInfo.socialNetworks && (
             <>
               <a

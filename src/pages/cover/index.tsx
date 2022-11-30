@@ -29,7 +29,7 @@ export default function Cover(props: CoverProps) {
         />
         <Text variant="subtitle" content={props.userProfile?.name} />
       </div>
-      <div className="italic flex flex-col items-center">
+      <div className="italic flex flex-col items-center text-center">
         <Text variant="outlined" content={props.famousPhrase?.phrase} />
         <Text content={props.famousPhrase?.author} />
       </div>

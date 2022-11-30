@@ -45,7 +45,7 @@ export default function About(props: AboutProps) {
       <Spreader colorClass={props.colorClass} />
       <section
         id="about"
-        className={`container flex flex-col gap-4 items-start relative max-w-[80%] w-full m-auto h-[110vh] py-6 `}
+        className={`container flex flex-col gap-4 items-start relative max-w-[80%] w-full m-auto min-h-[110vh] h-fit py-6 `}
       >
         <Text variant="title" content="About" className="backdrop-blur-sm backdrop-brightness-95" />
         <div className="flex flex-col w-full items-baseline">

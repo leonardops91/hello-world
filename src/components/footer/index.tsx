@@ -16,7 +16,7 @@ export default function Footer(props: footerProps) {
     }
     return (
       <section className="h-[10vh]">
-        <div className="flex border-2 items-center justify-center lg:justify-between max-w-[80%] w-full m-auto h-full border-t-2 border-purple-100">
+        <div className="flex items-center justify-center lg:justify-between max-w-[80%] w-full m-auto h-full border-t-2 border-purple-100">
           <Text
             variant="subtitle"
             content="Wanna know how this was built?" className="hidden lg:flex"

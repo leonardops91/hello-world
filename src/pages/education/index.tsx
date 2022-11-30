@@ -42,7 +42,7 @@ const colorsStyles: colorsStylesType = {
 };
 
 export default function Education(props: EducationProps){
-  const [reloadCloud, setReloadCloud] = useState(false)
+  const [reloadCloud, setReloadCloud] = useState(true)
   const colorClass = colorsStyles[props.pageColor];
 
   const educationInfo: EducationType = {
@@ -56,7 +56,7 @@ export default function Education(props: EducationProps){
     return (
       <section
         id={props.id}
-        className={`bg-space bg-no-repeat bg-cover  before:absolute before:w-full before:h-[110vh] ${colorClass} ${props.themeClass} `}
+        className={`bg-space bg-no-repeat bg-cover before:absolute before:w-full before:h-[110vh] ${colorClass} ${props.themeClass} `}
       >
         <div
           className={`flex gap-4 flex-col py-6 relative max-w-[80%] w-full m-auto h-[110vh]`}
