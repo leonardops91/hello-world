@@ -14,16 +14,16 @@ type colorsStylesType = {
 
 const colorsStyles: colorsStylesType = {
   dark: {
-    purple: `bg-purple-900 text-purple-100 shadow-purple-400 shadow-xl`,
-    blue: `bg-blue-900 text-blue-100 shadow-blue-400 shadow-xl`,
-    green: `bg-green-900 text-green-100 shadow-green-400 shadow-xl`,
-    red: `bg-red-900 text-red-100 shadow-red-400 shadow-xl`,
+    purple: `bg-purple-900 text-purple-100 `,
+    blue: `bg-blue-900 text-blue-100 `,
+    green: `bg-green-900 text-green-100 `,
+    red: `bg-red-900 text-red-100`,
   },
   light: {
-    purple: `bg-purple-100 text-purple-900 shadow-purple-400 shadow-xl`,
-    blue: `bg-blue-100 text-blue-900 shadow-blue-400 shadow-xl`,
-    green: `bg-green-100 text-green-900 shadow-green-400 shadow-xl`,
-    red: `bg-red-100 text-red-900 shadow-red-400 shadow-xl`,
+    purple: `bg-purple-100 text-purple-900 `,
+    blue: `bg-blue-100 text-blue-900`,
+    green: `bg-green-100 text-green-900 `,
+    red: `bg-red-100 text-red-900 `,
   },
 };
 

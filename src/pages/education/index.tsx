@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 import { DesktopTower, NotePencil } from "phosphor-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ReloadButton from "../../components/reloadButton";
 import { Text } from "../../components/textComponent";
 import WordCloud from "../../components/wordCloud";
@@ -42,7 +42,7 @@ const colorsStyles: colorsStylesType = {
 };
 
 export default function Education(props: EducationProps){
-  const [reloadCloud, setReloadCloud] = useState(true)
+  const [reloadCloud, setReloadCloud] = useState(false)
   const colorClass = colorsStyles[props.pageColor];
 
   const educationInfo: EducationType = {
@@ -50,6 +50,9 @@ export default function Education(props: EducationProps){
     technologies: props.data?.technologies,
   };
 
+  useEffect(() => {
+    setReloadCloud(!reloadCloud)
+  }, [])
     return (
       <section
         id={props.id}

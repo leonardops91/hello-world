@@ -54,7 +54,7 @@ export default function About(props: AboutProps) {
             <Text variant="subtitle" content="Background" />
           </header>
           <main className="w-full backdrop-blur-sm backdrop-brightness-95">
-            <Text variant="small" content={userBackground.careerDescription} />
+            <Text variant="bold" content={userBackground.careerDescription} />
           </main>
         </div>
         <div className="flex flex-col w-full items-baseline">

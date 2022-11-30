@@ -7,8 +7,7 @@ type SpreaderPros={
 }
   
   export function Spreader(props: SpreaderPros) {
-    const pageColor = localStorage.getItem("pageColor") || "purple";
-    const numberOfElements = 100;
+    const numberOfElements = 25;
     const array = []
     for(let i = 0; i<numberOfElements; i++){
       array.push(i)
@@ -19,18 +18,21 @@ type SpreaderPros={
       anime({
         targets: elements,
         translateX: () => {
-          return anime.random(-650, 650);
+          return anime.random(-700, 700);
         },
         translateY: () => {
-          return anime.random(-400, 400);
+          return anime.random(-500, 500);
         },
-        scaleY: () => anime.random(-2, 2),
-        scaleX: () => anime.random(-2, 2),
+        scale: () => anime.random(1, 5),
         easing: "linear",
         duration: 3000,
-        delay: anime.stagger(100),
+        delay: anime.stagger(10),
         loop: false,
-        complete: animateComponent
+        complete(anim) {
+          setTimeout(() => {
+            animateComponent()
+          }, 5000);
+        },
       });
     }
 
@@ -44,7 +46,7 @@ type SpreaderPros={
         className="flex items-center justify-center w-full h-full absolute overflow-hidden"
       >
         {array.map(item => {
-        return <div key={item} className={`absolute element w-10 h-32 z-0 ${props.colorClass}`}></div>
+        return <div key={item} className={`absolute element w-10 h-32 z-0 ${props.colorClass} drop-shadow-xl`}></div>
         })}
       </div>
     );
