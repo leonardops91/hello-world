@@ -1,6 +1,5 @@
 import anime from 'animejs/lib/anime.es.js';
 import { useEffect } from 'react';
-import ReloadButton from '../reloadButton';
 import './styles.css'
 
 type SpreaderPros={
@@ -9,7 +8,7 @@ type SpreaderPros={
   
   export function Spreader(props: SpreaderPros) {
     const pageColor = localStorage.getItem("pageColor") || "purple";
-    const numberOfElements = 50;
+    const numberOfElements = 100;
     const array = []
     for(let i = 0; i<numberOfElements; i++){
       array.push(i)
@@ -25,9 +24,13 @@ type SpreaderPros={
         translateY: () => {
           return anime.random(-400, 400);
         },
+        scaleY: () => anime.random(-2, 2),
+        scaleX: () => anime.random(-2, 2),
         easing: "linear",
         duration: 3000,
         delay: anime.stagger(100),
+        loop: false,
+        complete: animateComponent
       });
     }
 
@@ -41,9 +44,8 @@ type SpreaderPros={
         className="flex items-center justify-center w-full h-full absolute overflow-hidden"
       >
         {array.map(item => {
-        return <div key={item} className={`element w-10 h-32 z-0 ${props.colorClass}`}></div>
+        return <div key={item} className={`absolute element w-10 h-32 z-0 ${props.colorClass}`}></div>
         })}
-        <ReloadButton id='reloadBackground' onClick={animateComponent} pageColor={pageColor} />
       </div>
     );
   }
