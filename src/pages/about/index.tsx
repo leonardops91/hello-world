@@ -109,10 +109,10 @@ export default function About(props: AboutProps) {
                 return (
                   <li
                     key={experience.startDate.toString()}
-                    className="flex flex-col gap-1 justify-center w-full border-2 backdrop-blur-md backdrop-brightness-95 rounded-md py-4 px-2"
+                    className="flex flex-col gap-1 justify-center w-full backdrop-blur-md backdrop-brightness-95 rounded-md py-4 px-2"
                   >
                     <header className="flex flex-col gap-1 w-full">
-                      <Text variant="bold" content={experience.companyName} />
+                      <Text variant="medium" content={experience.companyName} />
                       <Text
                         variant="small"
                         content={experience.companyDescription}
