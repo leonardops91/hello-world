@@ -62,35 +62,43 @@ export default function Education(props: EducationProps){
           className={`flex gap-4 flex-col py-6 relative max-w-[80%] w-full m-auto h-[110vh]`}
         >
           <Text variant="title" content="IT Education" className="mb-1" />
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col items-start w-full">
             <header className="flex items-center justify-center gap-3 ">
               <NotePencil size={32} />
               <Text variant="subtitle" content="Main IT courses" />
             </header>
-            <main>
-              <ul className="flex flex-col gap-4">
+            <main className="w-full">
+              <ul className="flex flex-col gap-4 backdrop-blur-sm w-full backdrop-brightness-95">
                 {educationInfo.courses?.map((course) => {
                   return (
-                    <li key={course.name} className="flex gap-2">
-                      ▪
-                      <Text variant="bold" content={course.name} />
-                      -
-                      <Text variant="small" content={course.institute} />
-                      (
-                      <Text
-                        variant="small"
-                        content={format(new Date(course.startDate.toString()), "MMMM/yyyy")}
-                      />
-                      -
-                      <Text
-                        variant="small"
-                        content={format(new Date(course.endDate?.toString() || ""), "MMMM/yyyy")}
-                      />
-                      )
-                      <Text
-                        variant="small"
-                        content={`${course.workload?.toString()}h`}
-                      />
+                    <li key={course.name} className="flex flex-col gap-2 lg:flex-row">
+                      <header className="flex gap-1">
+                        <Text variant="bold" content={course.name} />
+                      </header>
+                      <main className="flex gap-1">
+                        <Text variant="small" content={course.institute} />
+                        (
+                        <Text
+                          variant="small"
+                          content={format(
+                            new Date(course.startDate.toString()),
+                            "MMMM/yyyy"
+                          )}
+                        />
+                        -
+                        <Text
+                          variant="small"
+                          content={format(
+                            new Date(course.endDate?.toString() || ""),
+                            "MMMM/yyyy"
+                          )}
+                        />
+                        )
+                        <Text
+                          variant="small"
+                          content={`${course.workload?.toString()}h`}
+                        />
+                      </main>
                     </li>
                   );
                 })}
