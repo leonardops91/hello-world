@@ -5,13 +5,14 @@ import ReloadButton from "../../components/reloadButton";
 import { Text } from "../../components/textComponent";
 import WordCloud from "../../components/wordCloud";
 import { GetUserInfoQuery } from "../../graphql/generated";
+import { motion } from "framer-motion";
+import { animationVariants } from "../../utils/animationVariants";
 
 type EducationProps = {
   pageColor: string;
-  themeClass: string
+  themeClass: string;
   data?: GetUserInfoQuery;
   id: string;
-
 };
 
 type EducationType = {
@@ -56,10 +57,10 @@ export default function Education(props: EducationProps){
     return (
       <section
         id={props.id}
-        className={`bg-space bg-no-repeat bg-cover before:absolute before:w-full before:h-[110vh] ${colorClass} ${props.themeClass} `}
+        className={`bg-space bg-no-repeat bg-cover before:absolute before:w-full before:min-h-[110vh] before:h-full ${colorClass} ${props.themeClass} `}
       >
         <div
-          className={`flex gap-4 flex-col py-6 relative max-w-[80%] w-full m-auto h-[110vh]`}
+          className={`flex gap-4 flex-col py-6 relative max-w-[80%] w-full m-auto min-h-[110vh] h-fit`}
         >
           <Text variant="title" content="IT Education" className="mb-1" />
           <div className="flex flex-col items-start w-full">
@@ -68,10 +69,23 @@ export default function Education(props: EducationProps){
               <Text variant="subtitle" content="Main IT courses" />
             </header>
             <main className="w-full">
-              <ul className="flex flex-col gap-4 backdrop-blur-sm w-full backdrop-brightness-95">
+              <motion.ul
+                variants={animationVariants}
+                initial="offScreenLeft"
+                whileInView="onScreen"
+                viewport={{ once: true }}
+                className="flex flex-col gap-4 backdrop-blur-sm w-full backdrop-brightness-95"
+              >
                 {educationInfo.courses?.map((course) => {
                   return (
-                    <li key={course.name} className="flex flex-col gap-2 lg:flex-row">
+                    <motion.li
+                      variants={animationVariants}
+                      initial="offScreenLeft"
+                      whileInView="onScreen"
+                      viewport={{ once: true }}
+                      key={course.name}
+                      className="flex flex-col gap-2 lg:flex-row"
+                    >
                       <header className="flex gap-1">
                         <Text variant="bold" content={course.name} />
                       </header>
@@ -99,10 +113,10 @@ export default function Education(props: EducationProps){
                           content={`${course.workload?.toString()}h`}
                         />
                       </main>
-                    </li>
+                    </motion.li>
                   );
                 })}
-              </ul>
+              </motion.ul>
             </main>
           </div>
           <div className="flex flex-col items-start h-[60%]">
@@ -110,16 +124,13 @@ export default function Education(props: EducationProps){
               <DesktopTower size={32} />
               <Text variant="subtitle" content="Knowledge Cloud" />
             </header>
-            <main className={`relative flex items-center justify-center h-full w-full ${reloadCloud}`}>
-              <div className="absolute opacity-90 w-full h-full">
-                <div className="absolute w-full h-[280px] bg-gray-200 rounded-full top-24 left-0 "></div>
-                <div className="absolute w-2/3 h-[280px] bg-gray-200 rounded-full top-12 left-72 "></div>
-                <div className="absolute w-2/3 h-[280px] bg-gray-200 rounded-full top-32 left-40 "></div>
-                <div className="absolute w-3/5 h-[280px] bg-gray-200 rounded-full top-0 left-44 "></div>
-              </div>
-               
-              <WordCloud data={educationInfo.technologies}/>
-              <ReloadButton id="reloadCloud" pageColor={props.pageColor} onClick={() => setReloadCloud(!reloadCloud)} />
+            <main
+              className={`relative flex items-center justify-center h-full w-full `}
+            >
+              <WordCloud
+                pageColor={props.pageColor}
+                data={educationInfo.technologies}
+              />
             </main>
           </div>
         </div>

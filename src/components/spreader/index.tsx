@@ -27,26 +27,10 @@ type SpreaderPros={
         duration: 3000,
         delay: anime.stagger(10),
         loop: false,
-        complete: continueAnimation
       });
     }
-    function continueAnimation() {
-      anime({
-        targets: elements,
-        translateX: () => {
-          return anime.random(-700, 700);
-        },
-        translateY: () => {
-          return anime.random(-500, 500);
-        },
-        scale: () => anime.random(1, 5),
-        easing: "linear",
-        duration: 5000,
-        delay: anime.stagger(4000),
-        loop: false,
-        complete: continueAnimation
-      });
-    }
+
+    
 
     useEffect(() => {
       animateComponent();
