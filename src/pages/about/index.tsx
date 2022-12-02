@@ -2,9 +2,8 @@ import { Strategy, Student, Flask } from "phosphor-react";
 import { Spreader } from "../../components/spreader";
 import { Text } from "../../components/textComponent";
 import { GetUserInfoQuery } from "../../graphql/generated";
-import { format, isDate } from 'date-fns'
-import { useEffect } from "react";
-import { TypeInfo } from "graphql";
+import { format } from 'date-fns'
+import {motion, Variants} from 'framer-motion'
 
 type AboutProps = {
   colorClass: string
@@ -47,13 +46,13 @@ export default function About(props: AboutProps) {
         id="about"
         className={`container flex flex-col gap-4 items-center relative max-w-[80%] w-full m-auto min-h-[110vh] h-fit py-6 `}
       >
-        <Text variant="title" content="About" className="text-center backdrop-blur-sm backdrop-brightness-95" />
+        <Text variant="title" content="About" className="text-center backdrop-blur-sm bg-gray-300 bg-opacity-50" />
         <div className="flex flex-col w-full items-baseline">
           <header className="flex items-center justify-center gap-4 w-full mb-4">
             <Strategy size={32} />
             <Text variant="subtitle" content="Background" className="text-center" />
           </header>
-          <main className="w-full backdrop-blur-sm backdrop-brightness-95 text-center py-4 px-2 ">
+          <main className="w-full backdrop-blur-sm bg-gray-300 bg-opacity-50 text-center py-4 px-2 ">
             <Text variant="bold" content={userBackground.careerDescription} />
           </main>
         </div>
@@ -62,7 +61,7 @@ export default function About(props: AboutProps) {
             <Student size={32} />
             <Text variant="subtitle" content="General Education" />
           </header>
-          <main className="flex flex-col-reverse gap-4 w-full backdrop-blur-sm backdrop-brightness-95">
+          <main className="flex flex-col-reverse gap-4 w-full backdrop-blur-sm bg-gray-300 bg-opacity-50">
             <ul className="flex gap-4 flex-col-reverse py-4">
               {userBackground.education?.map((course) => {
                 return (
@@ -109,7 +108,7 @@ export default function About(props: AboutProps) {
                 return (
                   <li
                     key={experience.startDate.toString()}
-                    className="flex flex-col gap-1 justify-center w-full backdrop-blur-md backdrop-brightness-95 rounded-md py-4 px-2"
+                    className="flex flex-col gap-1 justify-center w-full backdrop-blur-md bg-gray-300 bg-opacity-50 rounded-md py-4 px-2"
                   >
                     <header className="flex flex-col gap-1 w-full">
                       <Text variant="medium" content={experience.companyName} />
