@@ -1,7 +1,7 @@
 import { Tag2Cloud } from "./tag2Cloud";
-import MASK from "./cloud.png";
+import Mask from "./cloud.png";
 import ReloadButton from "../reloadButton";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type WordCloudProps = {
   pageColor: string
@@ -20,13 +20,12 @@ export default function WordCloud(props: WordCloudProps) {
   const cloud = document.getElementById("cloud");
   const [reloadCloud, setReloadCloud] = useState(true)
 
-
   if(cloud && props.data){
     const tag2Cloud = new Tag2Cloud(cloud, {
-      width: window.screen.width*0.8,
-      height: window.screen.height/2,
-      minFontSize: window.screen.width/65,
-      maxFontSize: window.screen.width/18,
+      width: window.screen.width < 512 ? window.screen.width : window.screen.width*0.8,
+      height: window.screen.height*0.9,
+      minFontSize: window.screen.width < 512 ? window.screen.width/30 : window.screen.width/60,
+      maxFontSize: window.screen.width < 512 ? window.screen.width/9 : window.screen.width/18,
       angleCount: 3,
       angleFrom: 0,
       angleTo: 0,
@@ -45,17 +44,24 @@ export default function WordCloud(props: WordCloudProps) {
     tag2Cloud.draw(cloudData);
 
   }
-
+  useEffect(() => {
+    window.screen.orientation.addEventListener("change", () => {
+      console.log("Reloading cloud")
+      
+      setReloadCloud(!reloadCloud)})
+  }, []);
   return (
     <>
-      <div className={`flex items-center justify-center w-fit h-fit backdrop-blur-md bg-gray-300 bg-opacity-50 ${reloadCloud}`}>
+      <div
+        className={`flex items-center justify-center w-fit h-fit backdrop-blur-md bg-gray-300 bg-opacity-50 ${reloadCloud}`}
+      >
         <div id="cloud" className="w-full h-full"></div>
+        <ReloadButton
+          id="reloadCloud"
+          pageColor={props.pageColor}
+          onClick={() => setReloadCloud(!reloadCloud)}
+        />
       </div>
-      <ReloadButton
-        id="reloadCloud"
-        pageColor={props.pageColor}
-        onClick={() => setReloadCloud(!reloadCloud)}
-      />
     </>
   );
   }
