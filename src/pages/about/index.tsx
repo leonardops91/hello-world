@@ -52,7 +52,7 @@ export default function About(props: AboutProps) {
             <Strategy size={32} />
             <Text variant="subtitle" content="Background" className="text-center" />
           </header>
-          <main className="w-full backdrop-blur-sm bg-gray-300 bg-opacity-50 text-center py-4 px-2 ">
+          <main className="w-full rounded-md backdrop-blur-sm bg-gray-300 bg-opacity-50 text-center py-4 px-2 ">
             <Text variant="bold" content={userBackground.careerDescription} />
           </main>
         </div>
@@ -61,11 +61,11 @@ export default function About(props: AboutProps) {
             <Student size={32} />
             <Text variant="subtitle" content="General Education" />
           </header>
-          <main className="flex flex-col-reverse gap-4 w-full backdrop-blur-sm bg-gray-300 bg-opacity-50">
+          <main className="flex flex-col-reverse gap-4 w-full">
             <ul className="flex gap-4 flex-col-reverse py-4">
               {userBackground.education?.map((course) => {
                 return (
-                  <li key={course.name} className="flex gap-1 flex-col items-center justify-center w-full">
+                  <li key={course.name} className="flex gap-1 flex-col items-center justify-center w-full rounded-md backdrop-blur-sm bg-gray-300 bg-opacity-50">
                     <header>
                       <Text variant="bold" content={course.name} />
                     </header>
@@ -111,7 +111,7 @@ export default function About(props: AboutProps) {
                     className="flex flex-col gap-1 justify-center w-full backdrop-blur-md bg-gray-300 bg-opacity-50 rounded-md py-4 px-2"
                   >
                     <header className="flex flex-col gap-1 w-full">
-                      <Text variant="medium" content={experience.companyName} />
+                      <Text variant="subtitle" content={experience.companyName} />
                       <Text
                         variant="small"
                         content={experience.companyDescription}

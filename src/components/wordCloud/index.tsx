@@ -52,7 +52,7 @@ export default function WordCloud(props: WordCloudProps) {
   return (
     <>
       <div
-        className={`flex items-center justify-center w-fit h-fit backdrop-blur-md bg-gray-300 bg-opacity-50 ${reloadCloud}`}
+        className={`flex items-center justify-center w-fit h-fit lg:rounded-md backdrop-blur-md bg-gray-300 bg-opacity-50 ${reloadCloud}`}
       >
         <div id="cloud" className="w-full h-full"></div>
         <ReloadButton

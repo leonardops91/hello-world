@@ -2,7 +2,7 @@ import { Variants } from 'framer-motion'
 
 export const animationVariants: Variants = {
     offScreenLeft: {
-      x: -1000,
+      x: -100    ,
       visibility: 'hidden'
     },
     offScreenRight: {

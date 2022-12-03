@@ -28,7 +28,7 @@ export default function ReloadButton(props:ReloadButtonProps) {
             targets: icon,
             rotate: '1turn',
             easing: 'linear',
-            duration: 1500,
+            duration: 200,
             direction: 'alternate'
         })
     }
@@ -38,7 +38,7 @@ export default function ReloadButton(props:ReloadButtonProps) {
         props.onClick()
     }
     return (
-        <div onClick={handleClick} className={`absolute z-50 cursor-pointer  border-2 p-3 bottom-3 left-3 group rounded-xl transition-all ${colorClass}`}>
+        <div onClick={handleClick} className={`absolute z-50 cursor-pointer  border-2 p-2 bottom-3 left-3 group rounded-lg transition-all ${colorClass}`}>
             <ArrowsClockwise id={props.id} className={`w-full ${props.id}`} size={25}/>
         </div>
     )

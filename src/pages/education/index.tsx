@@ -1,7 +1,6 @@
 import { format } from "date-fns";
 import { DesktopTower, NotePencil } from "phosphor-react";
 import { useEffect, useState } from "react";
-import ReloadButton from "../../components/reloadButton";
 import { Text } from "../../components/textComponent";
 import WordCloud from "../../components/wordCloud";
 import { GetUserInfoQuery } from "../../graphql/generated";
@@ -63,8 +62,8 @@ export default function Education(props: EducationProps){
           className={`flex gap-4 flex-col py-6 relative max-w-[80%] w-full m-auto min-h-[110vh] h-fit`}
         >
           <Text variant="title" content="IT Education" className="mb-1" />
-          <div className="flex flex-col items-start w-full">
-            <header className="flex items-center justify-center gap-3 ">
+          <div className="flex flex-col items-center w-full">
+            <header className="flex items-center justify-center gap-3 mb-4">
               <NotePencil size={32} />
               <Text variant="subtitle" content="Main IT courses" />
             </header>
@@ -74,7 +73,7 @@ export default function Education(props: EducationProps){
                 initial="offScreenLeft"
                 whileInView="onScreen"
                 viewport={{ once: true }}
-                className="flex flex-col gap-4 backdrop-blur-sm w-full backdrop-brightness-95"
+                className="flex flex-col items-center gap-4 w-full"
               >
                 {educationInfo.courses?.map((course) => {
                   return (
@@ -84,30 +83,36 @@ export default function Education(props: EducationProps){
                       whileInView="onScreen"
                       viewport={{ once: true }}
                       key={course.name}
-                      className="flex flex-col gap-2 lg:flex-row"
+                      className="w-full flex flex-col gap-2 rounded-md py-2 backdrop-blur-sm bg-gray-900 bg-opacity-50"
                     >
                       <header className="flex gap-1">
-                        <Text variant="bold" content={course.name} />
+                        <Text
+                          variant="bold"
+                          content={course.name}
+                          className="w-full text-center"
+                        />
                       </header>
-                      <main className="flex gap-1">
+                      <main className="flex flex-col items-center gap-1">
                         <Text variant="small" content={course.institute} />
-                        (
-                        <Text
-                          variant="small"
-                          content={format(
-                            new Date(course.startDate.toString()),
-                            "MMMM/yyyy"
-                          )}
-                        />
-                        -
-                        <Text
-                          variant="small"
-                          content={format(
-                            new Date(course.endDate?.toString() || ""),
-                            "MMMM/yyyy"
-                          )}
-                        />
-                        )
+                        <div className="flex gap-1">
+                          (
+                          <Text
+                            variant="small"
+                            content={format(
+                              new Date(course.startDate.toString()),
+                              "MMMM/yyyy"
+                            )}
+                          />
+                          -
+                          <Text
+                            variant="small"
+                            content={format(
+                              new Date(course.endDate?.toString() || ""),
+                              "MMMM/yyyy"
+                            )}
+                          />
+                          )
+                        </div>
                         <Text
                           variant="small"
                           content={`${course.workload?.toString()}h`}
@@ -119,8 +124,8 @@ export default function Education(props: EducationProps){
               </motion.ul>
             </main>
           </div>
-          <div className="flex flex-col items-start h-[60%]">
-            <header className="flex items-center justify-center gap-3 ">
+          <div className="flex flex-col items-center h-[60%]">
+            <header className="flex items-center justify-center gap-3 mb-4">
               <DesktopTower size={32} />
               <Text variant="subtitle" content="Knowledge Cloud" />
             </header>
