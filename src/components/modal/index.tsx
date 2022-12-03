@@ -13,7 +13,7 @@ export default function Modal(props: ModalProps) {
     <>
       <div className="flex items-center justify-center ">
         <div
-          className={`flex gap-2 justify-center items-center flex-col p-6 fixed -bottom-54 z-50 rounded-lg  backdrop-blur-md bg-gray-300 container h-[40%] w-[80%] lg:w-[40%] transition-all duration-[.1s] ease-linear opacity-0 -y-1000 ${
+          className={`flex gap-2 justify-center items-center flex-col p-6 fixed -bottom-54 z-50 rounded-lg  backdrop-blur-md bg-gray-300 container h-[50%] w-[80%] lg:w-[40%] transition-all duration-[.1s] ease-linear opacity-0 -y-1000 ${
             props.isModalOpen && "mb-0 bg-opacity-50 opacity-100 bottom-20"
           }`}
         >
@@ -31,14 +31,14 @@ export default function Modal(props: ModalProps) {
           <Text
             variant="subtitle"
             content="You found an easter egg"
-            className="text-center"
+            className="text-center hidden lg:block"
           />
           <Text
             variant="medium"
             content="Now you can look the code of this page"
             className="text-center"
           />
-          <Text variant="bold" content="Have fun!" />
+          <Text variant="bold" content="Have fun!" className="hidden lg:block" />
           <a
             className="rounded-md py-1 px-2 bg-gray-200 hover:bg-gray-300 text-gray-900 transition-all"
             target="_blanck"
