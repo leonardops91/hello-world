@@ -45,15 +45,15 @@ export default function Contact(props: ContactProps){
       <div
         className={`flex flex-col justify-center items-center py-6 relative text-center max-w-[80%] w-full m-auto min-h-[90vh] h-fit border-b-1 `}
       >
-        <div className="flex flex-col ">
+        <div className="flex flex-col mb-4">
           <header className="flex items-center justify-center mb-6">
-            <Text variant="title" content="Future" />
+            <Text variant="title" content="Future" className="backdrop-blur-sm bg-gray-900 bg-opacity-50"/>
           </header>
           <main className="flex justify-center h-full w-full">
             <Text content={contactInfo.objective} />
           </main>
         </div>
-        <Text variant="title" content="Contact" className="mb-6" />
+        <Text variant="title" content="Contact" className="mb-6 backdrop-blur-sm bg-gray-900 bg-opacity-50" />
         <div className="flex flex-col justify-center gap-7  items-start md:flex-row">
           {contactInfo.socialNetworks && (
             <>

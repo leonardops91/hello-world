@@ -61,7 +61,7 @@ export default function Education(props: EducationProps){
         <div
           className={`flex gap-4 flex-col py-6 relative max-w-[80%] w-full m-auto min-h-[110vh] h-fit`}
         >
-          <Text variant="title" content="IT Education" className="mb-1" />
+          <Text variant="title" content="IT Education" className="mb-1 backdrop-blur-sm bg-gray-900 bg-opacity-50" />
           <div className="flex flex-col items-center w-full">
             <header className="flex items-center justify-center gap-3 mb-4">
               <NotePencil size={32} />

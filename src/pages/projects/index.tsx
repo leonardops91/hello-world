@@ -29,8 +29,8 @@ export default function Projects(props: ProjectsProps){
         className="max-w-[80%] w-full m-auto h-[110vh] py-6 flex flex-col items-center"
       >
         <div className="flex gap-4 flex-col items-center max-w-screen-xl w-full h-[80%]">
-          <header>
-            <Text variant="title" content="Projects" />
+          <header className="w-full">
+            <Text variant="title" content="Projects" className="backdrop-blur-sm bg-gray-300 bg-opacity-50" />
           </header>
           <main className="xl:grid gap-4 xl:grid-cols-2 xl:h-[100%] w-fit overflow-auto  flex flex-col">
             {projectsInfo.projects.map(cardInfo => {
