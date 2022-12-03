@@ -1,5 +1,4 @@
 import { Tag2Cloud } from "./tag2Cloud";
-import Mask from "./cloud.png";
 import ReloadButton from "../reloadButton";
 import { useEffect, useState } from "react";
 
@@ -18,13 +17,13 @@ type CloudDataType = {
 
 export default function WordCloud(props: WordCloudProps) {
   const cloud = document.getElementById("cloud");
-  const [reloadCloud, setReloadCloud] = useState(true)
+  const [reloadCloud, setReloadCloud] = useState(false)
 
   if(cloud && props.data){
     const tag2Cloud = new Tag2Cloud(cloud, {
       width: window.screen.width < 512 ? window.screen.width : window.screen.width*0.8,
-      height: window.screen.height*0.9,
-      minFontSize: window.screen.width < 512 ? window.screen.width/30 : window.screen.width/60,
+      height: window.screen.height*0.8,
+      minFontSize: window.screen.width < 512 ? window.screen.width/35 : window.screen.width/70,
       maxFontSize: window.screen.width < 512 ? window.screen.width/9 : window.screen.width/18,
       angleCount: 3,
       angleFrom: 0,
@@ -39,16 +38,16 @@ export default function WordCloud(props: WordCloudProps) {
 
     if(reloadCloud){
       tag2Cloud.destroy()
-      setReloadCloud(!reloadCloud)
+      setReloadCloud(false)
     }
+    
     tag2Cloud.draw(cloudData);
 
   }
   useEffect(() => {
     window.screen.orientation.addEventListener("change", () => {
-      console.log("Reloading cloud")
-      
-      setReloadCloud(!reloadCloud)})
+      setReloadCloud(true);
+    });
   }, []);
   return (
     <>
@@ -59,7 +58,7 @@ export default function WordCloud(props: WordCloudProps) {
         <ReloadButton
           id="reloadCloud"
           pageColor={props.pageColor}
-          onClick={() => setReloadCloud(!reloadCloud)}
+          onClick={() => setReloadCloud(true)}
         />
       </div>
     </>
