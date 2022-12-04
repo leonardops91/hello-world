@@ -54,7 +54,7 @@ export default function Contact(props: ContactProps){
           </main>
         </div>
         <Text variant="title" content="Contact" className="mb-6 backdrop-blur-sm bg-gray-900 bg-opacity-50" />
-        <div className="flex flex-col justify-center gap-7  items-start md:flex-row">
+        <div className="flex justify-center gap-7  items-start flex-row">
           {contactInfo.socialNetworks && (
             <>
               <a
@@ -62,21 +62,21 @@ export default function Contact(props: ContactProps){
                 className="flex items-center justify-center gap-3 hover:scale-110 transition-all"
               >
                 <LinkedinLogo size={32} />
-                <Text variant="subtitle" content="LinkedIn" />
+                <Text variant="subtitle" content="LinkedIn" className="hidden md:block" />
               </a>
               <a
                 href={contactInfo.socialNetworks[1].url}
                 className="flex items-center justify-center gap-3 hover:scale-110 transition-all"
               >
                 <GithubLogo size={32} />
-                <Text variant="subtitle" content="Github" />
+                <Text variant="subtitle" content="Github" className="hidden md:block" />
               </a>
               <a
                 href={contactInfo.socialNetworks[2].url}
                 className="flex items-center justify-center gap-3 hover:scale-110 transition-all"
               >
                 <InstagramLogo size={32} />
-                <Text variant="subtitle" content="Instagram" />
+                <Text variant="subtitle" content="Instagram" className="hidden md:block" />
               </a>
             </>
           )}

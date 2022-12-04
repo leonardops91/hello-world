@@ -48,6 +48,7 @@ export default function WordCloud(props: WordCloudProps) {
     window.screen.orientation.addEventListener("change", () => {
       setReloadCloud(true);
     });
+    setReloadCloud(true)
   }, []);
   return (
     <>

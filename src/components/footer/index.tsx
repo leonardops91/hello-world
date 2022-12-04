@@ -15,7 +15,7 @@ export default function Footer(props: footerProps) {
         
     }
     return (
-      <section className="h-[10vh]">
+      <section className="h-16">
         <div className="flex items-center justify-center lg:justify-between max-w-[80%] w-full m-auto h-full border-t-2 border-purple-100">
           <Text
             variant="subtitle"
