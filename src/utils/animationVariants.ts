@@ -6,7 +6,7 @@ export const animationVariants: Variants = {
       visibility: 'hidden'
     },
     offScreenRight: {
-      x: 1000,
+      x: 100,
       visibility: 'hidden'
     },
     onScreen: {
@@ -14,8 +14,10 @@ export const animationVariants: Variants = {
       visibility: 'visible',
       transition: {
         type: "spring",
-        bounce: 0.4,
-        duration: 0.8
+        // bounce: 0.4,
+        duration: 0.8,
+        delay: 0.6,
       }
     }
   }
+

@@ -1,6 +1,8 @@
+import { delay, motion } from "framer-motion";
 import { GithubLogo, InstagramLogo, LinkedinLogo } from "phosphor-react";
 import { Text } from "../../components/textComponent";
 import { GetUserInfoQuery} from "../../graphql/generated";
+import { animationVariants } from "../../utils/animationVariants";
 
 type ContactProps = {
   pageColor: string;
@@ -47,37 +49,77 @@ export default function Contact(props: ContactProps){
       >
         <div className="flex flex-col mb-4">
           <header className="flex items-center justify-center mb-6">
-            <Text variant="title" content="Future" className="backdrop-blur-sm bg-gray-900 bg-opacity-50"/>
+            <Text
+              variant="title"
+              content="Future"
+              className="backdrop-blur-sm bg-gray-900 bg-opacity-50"
+            />
           </header>
-          <main className="flex justify-center h-full w-full">
+          <motion.main
+            layoutId="animateArive"
+            variants={animationVariants}
+            initial="offScreenLeft"
+            whileInView="onScreen"
+            viewport={{ once: true }}
+            className="flex justify-center h-full w-full"
+          >
             <Text content={contactInfo.objective} />
-          </main>
+          </motion.main>
         </div>
-        <Text variant="title" content="Contact" className="mb-6 backdrop-blur-sm bg-gray-900 bg-opacity-50" />
+        <Text
+          variant="title"
+          content="Contact"
+          className="mb-6 backdrop-blur-sm bg-gray-900 bg-opacity-50"
+        />
         <div className="flex justify-center gap-7  items-start flex-row">
           {contactInfo.socialNetworks && (
             <>
-              <a
+              <motion.a
+                layoutId="animateArive"
+                variants={animationVariants}
+                initial="offScreenLeft"
+                whileInView="onScreen"
+                viewport={{ once: true }}
                 href={contactInfo.socialNetworks[0].url}
                 className="flex items-center justify-center gap-3 hover:scale-110 transition-all"
               >
                 <LinkedinLogo size={32} />
-                <Text variant="subtitle" content="LinkedIn" className="hidden md:block" />
-              </a>
-              <a
+                <Text
+                  variant="subtitle"
+                  content="LinkedIn"
+                  className="hidden md:block"
+                />
+              </motion.a>
+              <motion.a
+                initial={{opacity: 0}}
+                whileInView={{opacity: 100, transition: {delay: 1}}}
+                viewport={{ once: true }}
                 href={contactInfo.socialNetworks[1].url}
                 className="flex items-center justify-center gap-3 hover:scale-110 transition-all"
               >
                 <GithubLogo size={32} />
-                <Text variant="subtitle" content="Github" className="hidden md:block" />
-              </a>
-              <a
+                <Text
+                  variant="subtitle"
+                  content="Github"
+                  className="hidden md:block"
+                />
+              </motion.a>
+              <motion.a
+                layoutId="animateArive"
+                variants={animationVariants}
+                initial="offScreenRight"
+                whileInView="onScreen"
+                viewport={{ once: true }}
                 href={contactInfo.socialNetworks[2].url}
                 className="flex items-center justify-center gap-3 hover:scale-110 transition-all"
               >
                 <InstagramLogo size={32} />
-                <Text variant="subtitle" content="Instagram" className="hidden md:block" />
-              </a>
+                <Text
+                  variant="subtitle"
+                  content="Instagram"
+                  className="hidden md:block"
+                />
+              </motion.a>
             </>
           )}
         </div>

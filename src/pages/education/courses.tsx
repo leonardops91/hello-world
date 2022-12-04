@@ -23,23 +23,27 @@ export default function Courses(props: EducationProps){
           className="mb-6 backdrop-blur-sm bg-gray-900 bg-opacity-50"
         />
         <div className="flex flex-col items-center w-full">
-          <header className="flex items-center justify-center gap-3 mb-4">
+          <motion.header
+            layoutId="animateArive"
+            variants={animationVariants}
+            initial="offScreenLeft"
+            whileInView="onScreen"
+            viewport={{ once: true }}
+            className="flex items-center justify-center gap-3 mb-4"
+          >
             <NotePencil size={32} />
             <Text variant="subtitle" content="Main IT courses" />
-          </header>
+          </motion.header>
           <main className="w-full">
-            <motion.ul
-              variants={animationVariants}
-              initial="offScreenLeft"
-              whileInView="onScreen"
-              viewport={{ once: true }}
-              className="flex flex-col items-center gap-4 w-full"
-            >
-              {props.courses?.map((course) => {
+            <motion.ul className="flex flex-col items-center gap-4 w-full">
+              {props.courses?.map((course, index) => {
                 return (
                   <motion.li
+                    layoutId="animateArive"
                     variants={animationVariants}
-                    initial="offScreenLeft"
+                    initial={
+                      index % 2 === 0 ? "offScreenRight" : "offScreenLeft"
+                    }
                     whileInView="onScreen"
                     viewport={{ once: true }}
                     key={course.name}

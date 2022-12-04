@@ -44,7 +44,6 @@ export default function About(props: AboutProps) {
 
   return (
     <div className="relative w-full h-full">
-      <Spreader colorClass={props.colorClass} />
       <section
         id="about"
         className={`container flex flex-col gap-6 items-center relative max-w-[80%] w-full m-auto min-h-[110vh] h-fit py-6 `}
