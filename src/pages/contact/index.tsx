@@ -109,7 +109,7 @@ export default function Contact(props: ContactProps){
               <motion.a
                 layoutId="animateArive"
                 variants={animationVariants}
-                initial="offScreenRight"
+                initial="offScreenLeft"
                 whileInView="onScreen"
                 viewport={{ once: true }}
                 href={contactInfo.socialNetworks[2].url}

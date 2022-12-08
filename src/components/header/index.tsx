@@ -25,7 +25,7 @@ export default function Header(props: headerProps) {
       </div>
       <nav
         onClick={(e) => e.stopPropagation}
-        className={`absolute top-0 lg:top-5 right-0 flex flex-col lg:flex-row gap-6 items-center justify-center h-screen lg:h-fit w-[80vw] lg:w-fit transition-all ${
+        className={`absolute top-0 lg:top-5 right-0 flex flex-col lg:flex-row gap-4 items-center justify-center h-screen lg:h-fit w-[80vw] lg:w-fit transition-all ${
           isMenuOpen
             ? "justify-start  bg-red-900"
             : "-right-[100%] lg:right-[10%]"
