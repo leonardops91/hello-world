@@ -12,7 +12,6 @@ type CoverProps = {
     phrase?: string
     author?: string
   },
-  setPageColor: Dispatch<SetStateAction<string>>
   pageColor: string
 };
 
@@ -20,8 +19,7 @@ export default function Cover(props: CoverProps) {
 
   return (
     <section className="relative flex flex-col items-center justify-around max-w-[80%] w-full m-auto h-[100vh] z-10">
-      <PageColorMenu setPageColor={props.setPageColor}/>
-      <div className="flex items-center flex-col">
+      <div className="flex items-center flex-col pt-[14vh]">
         <img
           src={props.userProfile.avatarURL || userAvatar}
           alt="user avatar"

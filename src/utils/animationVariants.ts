@@ -14,7 +14,7 @@ export const animationVariants: Variants = {
       visibility: 'visible',
       transition: {
         type: "spring",
-        // bounce: 0.4,
+        bounce: 0.4,
         duration: 0.8,
         delay: 0.6,
       }

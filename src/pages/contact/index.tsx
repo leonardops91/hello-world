@@ -1,4 +1,4 @@
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { GithubLogo, InstagramLogo, LinkedinLogo } from "phosphor-react";
 import { Text } from "../../components/textComponent";
 import { GetUserInfoQuery} from "../../graphql/generated";
@@ -81,6 +81,7 @@ export default function Contact(props: ContactProps){
                 whileInView="onScreen"
                 viewport={{ once: true }}
                 href={contactInfo.socialNetworks[0].url}
+                target="_blank"
                 className="flex items-center justify-center gap-3 hover:scale-110 transition-all"
               >
                 <LinkedinLogo size={32} />
@@ -95,6 +96,7 @@ export default function Contact(props: ContactProps){
                 whileInView={{opacity: 100, transition: {delay: 1}}}
                 viewport={{ once: true }}
                 href={contactInfo.socialNetworks[1].url}
+                target="_blank"
                 className="flex items-center justify-center gap-3 hover:scale-110 transition-all"
               >
                 <GithubLogo size={32} />
@@ -111,6 +113,7 @@ export default function Contact(props: ContactProps){
                 whileInView="onScreen"
                 viewport={{ once: true }}
                 href={contactInfo.socialNetworks[2].url}
+                target="_blank"
                 className="flex items-center justify-center gap-3 hover:scale-110 transition-all"
               >
                 <InstagramLogo size={32} />

@@ -46,7 +46,7 @@ export default function About(props: AboutProps) {
     <div className="relative w-full h-full">
       <section
         id="about"
-        className={`container flex flex-col gap-6 items-center relative max-w-[80%] w-full m-auto min-h-[110vh] h-fit py-6 `}
+        className={`container flex flex-col gap-6 items-center relative max-w-[80%] w-full m-auto min-h-[110vh] h-fit pb-6 pt-[16vh] `}
       >
         <Text variant="title" content="About" className="text-center backdrop-blur-sm bg-gray-300 bg-opacity-50" />
         <Background careerDescription={userBackground.careerDescription}/>

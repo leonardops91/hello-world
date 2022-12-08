@@ -47,7 +47,7 @@ export default function Education(props: EducationProps){
     return (
       <section
         id={props.id}
-        className={`bg-space bg-no-repeat bg-cover before:absolute before:w-full before:min-h-[110vh] before:h-full ${colorClass} ${props.themeClass} `}
+        className={`bg-space bg-no-repeat bg-cover pt-[16vh] before:absolute before:w-full before:min-h-[110vh] before:h-full ${colorClass} ${props.themeClass} `}
       >
         <div
           className={`flex gap-4 flex-col py-6 relative max-w-[80%] w-full m-auto min-h-[110vh] h-fit`}

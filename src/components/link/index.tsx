@@ -4,6 +4,8 @@ type LinkProps = {
     content: string
     href: string
     pageColor: string
+    className?: string
+    onClick: () => void
 }
 
 type colorStylesType = {
@@ -21,6 +23,6 @@ export function Link(props: LinkProps) {
 
 
     return (
-        <LinkScroll smooth={true} spy={true} offset={0} duration={300} to={props.href} className={`cursor-pointer font-normal text-md hover:border-b-2 hover:border-b-white ${colorClass}`}>{props.content}</LinkScroll>
+        <LinkScroll onClick={props.onClick} smooth={true} spy={true} offset={0} duration={300} to={props.href} className={`cursor-pointer font-normal text-md hover:border-b-2 hover:border-b-white ${props.className} ${colorClass}`}>{props.content}</LinkScroll>
     )
 }
