@@ -42,10 +42,10 @@ export default function Contact(props: ContactProps){
   return (
     <section
       id={props.id}
-      className={`bg-nature bg-no-repeat bg-cover min-h-[93vh] h-fit before:absolute before:w-full before:h-[93vh] ${colorClass} ${props.themeClass} `}
+      className={`relative bg-nature bg-no-repeat bg-cover min-h-[90vh] h-fit before:absolute before:w-full  before:h-full ${colorClass} ${props.themeClass} `}
     >
       <div
-        className={`flex flex-col justify-center items-center py-6 relative text-center max-w-[80%] w-full m-auto min-h-[90vh] h-fit border-b-1 `}
+        className={`flex flex-col justify-center items-center py-6 pt-[16vh] relative text-center max-w-[80%] w-full m-auto min-h-[90vh] h-fit border-b-1 `}
       >
         <div className="flex flex-col mb-4">
           <header className="flex items-center justify-center mb-6">
@@ -109,7 +109,7 @@ export default function Contact(props: ContactProps){
               <motion.a
                 
                 variants={animationVariants}
-                initial="offScreenLeft"
+                initial="offScreenRight"
                 whileInView="onScreen"
                 viewport={{ once: true }}
                 href={contactInfo.socialNetworks[2].url}

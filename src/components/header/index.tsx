@@ -15,7 +15,7 @@ export default function Header(props: headerProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   return (
     <section className="fixed flex items-center h-fit w-screen backdrop-blur-md bg-black bg-opacity-50  z-20">
-      <div className="relative flex items-center justify-between border-b-2 border-purple-100 h-[10vh] max-w-[80%] w-full m-auto">
+      <div className="relative flex items-center justify-between border-b-2 border-purple-100 h-20 max-w-[80%] w-full m-auto">
         <Toggle
           setPageTheme={props.setGeneralTheme}
           pageColor={props.pageColor}
@@ -36,7 +36,7 @@ export default function Header(props: headerProps) {
           content="Education" onClick={() => setIsMenuOpen(false)} className="w-full flex items-center justify-center"
           href="education"
           pageColor={props.pageColor}
-        />
+        /> 
 
         <Link content="Projects" onClick={() => setIsMenuOpen(false)} className="w-full flex items-center justify-center" href="projects" pageColor={props.pageColor} />
         <Link content="Contact" onClick={() => setIsMenuOpen(false)} className="w-full flex items-center justify-center" href="contact" pageColor={props.pageColor} />

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { MoonStars, Sun } from 'phosphor-react'
 import { Dispatch, SetStateAction, useState } from 'react';
 

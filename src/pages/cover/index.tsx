@@ -19,7 +19,7 @@ export default function Cover(props: CoverProps) {
 
   return (
     <section className="relative flex flex-col items-center justify-around max-w-[80%] w-full m-auto h-[100vh] z-10">
-      <div className="flex items-center flex-col pt-[14vh]">
+      <div className="flex items-center flex-col pt-[16vh]">
         <img
           src={props.userProfile.avatarURL || userAvatar}
           alt="user avatar"
