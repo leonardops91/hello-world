@@ -24,7 +24,7 @@ export default function Courses(props: EducationProps){
         />
         <div className="flex flex-col items-center w-full">
           <motion.header
-            layoutId="animateArive"
+            
             variants={animationVariants}
             initial="offScreenLeft"
             whileInView="onScreen"
@@ -39,7 +39,7 @@ export default function Courses(props: EducationProps){
               {props.courses?.map((course, index) => {
                 return (
                   <motion.li
-                    layoutId="animateArive"
+                    
                     variants={animationVariants}
                     initial={
                       index % 2 === 0 ? "offScreenRight" : "offScreenLeft"

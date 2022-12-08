@@ -21,7 +21,7 @@ export default function Experiences(props: ExperiencesProps) {
     return (
       <div className="flex flex-col w-full items-baseline">
         <motion.header
-          layoutId="animateArive"
+          
           variants={animationVariants}
           initial="offScreenLeft"
           whileInView="onScreen"
@@ -36,7 +36,7 @@ export default function Experiences(props: ExperiencesProps) {
             {props.experiences?.map((experience, index) => {
               return (
                 <motion.li
-                  layoutId="animateArive"
+                  
                   variants={animationVariants}
                   initial={index%2===0 ? "offScreenLeft" : "offScreenLeft"}
                   whileInView="onScreen"

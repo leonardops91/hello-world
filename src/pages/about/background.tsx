@@ -11,7 +11,7 @@ export default function Background(props: BackgroundProps){
     return (
       <div className="flex flex-col w-full items-baseline">
         <motion.header
-          layoutId="animateArive"
+          
           variants={animationVariants}
           initial="offScreenLeft"
           whileInView="onScreen"
@@ -26,7 +26,7 @@ export default function Background(props: BackgroundProps){
           />
         </motion.header>
         <motion.main
-          layoutId="animateArive"
+          
           variants={animationVariants}
           initial="offScreenLeft"
           whileInView="onScreen"

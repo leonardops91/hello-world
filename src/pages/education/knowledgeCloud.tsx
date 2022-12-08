@@ -16,7 +16,7 @@ export default function KnowledgeLevel(props: KnowledgeCloudProps) {
     return (
       <div className="flex flex-col items-center h-[60%]">
         <motion.header
-          layoutId="animateArive"
+          
           variants={animationVariants}
           initial="offScreenLeft"
           whileInView="onScreen"
@@ -27,7 +27,7 @@ export default function KnowledgeLevel(props: KnowledgeCloudProps) {
           <Text variant="subtitle" content="Knowledge Cloud" />
         </motion.header>
         <motion.main
-          layoutId="animateArive"
+          
           variants={animationVariants}
           initial="offScreenLeft"
           whileInView="onScreen"

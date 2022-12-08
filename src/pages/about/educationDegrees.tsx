@@ -17,7 +17,7 @@ export default function EducationDegrees(props: EducationDegreesProps) {
   return (
     <div className="flex flex-col w-full items-center">
       <motion.header
-        layoutId="animateArive"
+        
         variants={animationVariants}
         initial="offScreenLeft"
         whileInView="onScreen"
@@ -32,7 +32,7 @@ export default function EducationDegrees(props: EducationDegreesProps) {
           {props.education?.map((course, index) => {
             return (
               <motion.li
-                layoutId="animateArive"
+                
                 variants={animationVariants}
                 initial={index % 2 === 0 ? "offScreenRight" : "offScreenLeft"}
                 whileInView="onScreen"

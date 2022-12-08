@@ -56,7 +56,7 @@ export default function Contact(props: ContactProps){
             />
           </header>
           <motion.main
-            layoutId="animateArive"
+            
             variants={animationVariants}
             initial="offScreenLeft"
             whileInView="onScreen"
@@ -75,7 +75,7 @@ export default function Contact(props: ContactProps){
           {contactInfo.socialNetworks && (
             <>
               <motion.a
-                layoutId="animateArive"
+                
                 variants={animationVariants}
                 initial="offScreenLeft"
                 whileInView="onScreen"
@@ -107,7 +107,7 @@ export default function Contact(props: ContactProps){
                 />
               </motion.a>
               <motion.a
-                layoutId="animateArive"
+                
                 variants={animationVariants}
                 initial="offScreenLeft"
                 whileInView="onScreen"
