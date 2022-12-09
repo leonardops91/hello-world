@@ -1,7 +1,7 @@
 import { DesktopTower } from "phosphor-react";
 import WordCloud from "../../components/wordCloud";
 import { Text } from '../../components/textComponent/index'
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { animationVariants } from "../../utils/animationVariants";
 
 type KnowledgeCloudProps = {
@@ -15,7 +15,7 @@ type KnowledgeCloudProps = {
 export default function KnowledgeLevel(props: KnowledgeCloudProps) {
     return (
       <div className="flex flex-col items-center h-[60%]">
-        <motion.header
+        <m.header
           
           variants={animationVariants}
           initial="offScreenLeft"
@@ -25,8 +25,8 @@ export default function KnowledgeLevel(props: KnowledgeCloudProps) {
         >
           <DesktopTower size={32} />
           <Text variant="subtitle" content="Knowledge Cloud" />
-        </motion.header>
-        <motion.main
+        </m.header>
+        <m.main
           
           variants={animationVariants}
           initial="offScreenLeft"
@@ -35,7 +35,7 @@ export default function KnowledgeLevel(props: KnowledgeCloudProps) {
           className={`relative flex items-center justify-center h-full w-full `}
         >
           <WordCloud pageColor={props.pageColor} data={props.technologies} />
-        </motion.main>
+        </m.main>
       </div>
     );
 }

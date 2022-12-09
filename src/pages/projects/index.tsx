@@ -1,6 +1,5 @@
 import { Text } from "../../components/textComponent";
 import { GetUserInfoQuery } from "../../graphql/generated";
-import Slider from '../../components/slider/index.js'
 import Card from "../../components/card";
 
 type ProjectsProps = {

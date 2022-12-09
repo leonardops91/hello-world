@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Flask } from "phosphor-react";
 import { Text } from '../../components/textComponent'
 import { animationVariants } from "../../utils/animationVariants";
@@ -20,7 +20,7 @@ type ExperiencesProps = {
 export default function Experiences(props: ExperiencesProps) {
     return (
       <div className="flex flex-col w-full items-baseline">
-        <motion.header
+        <m.header
           
           variants={animationVariants}
           initial="offScreenLeft"
@@ -30,12 +30,12 @@ export default function Experiences(props: ExperiencesProps) {
         >
           <Flask size={32} />
           <Text variant="subtitle" content="IT Experience" />
-        </motion.header>
+        </m.header>
         <main className="flex gap-4 w-full">
           <ul className="flex gap-4 flex-col-reverse w-full">
             {props.experiences?.map((experience, index) => {
               return (
-                <motion.li
+                <m.li
                   
                   variants={animationVariants}
                   initial={index%2===0 ? "offScreenLeft" : "offScreenLeft"}
@@ -97,7 +97,7 @@ export default function Experiences(props: ExperiencesProps) {
                       </div>
                     </div>
                   </main>
-                </motion.li>
+                </m.li>
               );
             })}
           </ul>

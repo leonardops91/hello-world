@@ -1,9 +1,5 @@
-import { Strategy, Student, Flask } from "phosphor-react";
-import { Spreader } from "../../components/spreader";
 import { Text } from "../../components/textComponent";
 import { GetUserInfoQuery } from "../../graphql/generated";
-import { format } from 'date-fns'
-import {motion, Variants} from 'framer-motion'
 import EducationDegrees from "./educationDegrees";
 import Experiences from "./experiences";
 import Background from "./background";
@@ -43,16 +39,20 @@ export default function About(props: AboutProps) {
   };
 
   return (
-    <div className="relative w-full h-full">
-      <section
-        id="about"
-        className={`container flex flex-col gap-6 items-center relative max-w-[80%] w-full m-auto min-h-[110vh] h-fit pb-6 pt-[16vh] `}
-      >
-        <Text variant="title" content="About" className="text-center backdrop-blur-sm bg-gray-300 bg-opacity-50" />
-        <Background careerDescription={userBackground.careerDescription}/>
-        <EducationDegrees education={userBackground.education} />
-        <Experiences experiences={userBackground.experiences}/>
-      </section>
-    </div>
+      <div className="relative w-full h-full">
+        <section
+          id="about"
+          className={`container flex flex-col gap-6 items-center relative max-w-[80%] w-full m-auto min-h-[110vh] h-fit pb-6 pt-[16vh] `}
+        >
+          <Text
+            variant="title"
+            content="About"
+            className="text-center backdrop-blur-sm bg-gray-300 bg-opacity-50"
+          />
+          <Background careerDescription={userBackground.careerDescription} />
+          <EducationDegrees education={userBackground.education} />
+          <Experiences experiences={userBackground.experiences} />
+        </section>
+      </div>
   );
 }

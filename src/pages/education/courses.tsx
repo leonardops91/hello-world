@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { NotePencil } from "phosphor-react";
 import { animationVariants } from "../../utils/animationVariants";
 import { Text } from '../../components/textComponent/index'
@@ -23,7 +23,7 @@ export default function Courses(props: EducationProps){
           className="mb-6 backdrop-blur-sm bg-gray-900 bg-opacity-50"
         />
         <div className="flex flex-col items-center w-full">
-          <motion.header
+          <m.header
             
             variants={animationVariants}
             initial="offScreenLeft"
@@ -33,12 +33,12 @@ export default function Courses(props: EducationProps){
           >
             <NotePencil size={32} />
             <Text variant="subtitle" content="Main IT courses" />
-          </motion.header>
+          </m.header>
           <main className="w-full">
-            <motion.ul className="flex flex-col items-center gap-4 w-full">
+            <m.ul className="flex flex-col items-center gap-4 w-full">
               {props.courses?.map((course, index) => {
                 return (
-                  <motion.li
+                  <m.li
                     
                     variants={animationVariants}
                     initial={
@@ -82,10 +82,10 @@ export default function Courses(props: EducationProps){
                         content={`${course.workload?.toString()}h`}
                       />
                     </main>
-                  </motion.li>
+                  </m.li>
                 );
               })}
-            </motion.ul>
+            </m.ul>
           </main>
         </div>
       </div>

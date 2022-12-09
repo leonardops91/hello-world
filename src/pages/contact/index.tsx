@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { GithubLogo, InstagramLogo, LinkedinLogo } from "phosphor-react";
 import { Text } from "../../components/textComponent";
 import { GetUserInfoQuery} from "../../graphql/generated";
@@ -47,25 +47,6 @@ export default function Contact(props: ContactProps){
       <div
         className={`flex flex-col justify-center items-center py-6 pt-[16vh] relative text-center max-w-[80%] w-full m-auto min-h-[90vh] h-fit border-b-1 `}
       >
-        <div className="flex flex-col mb-4">
-          <header className="flex items-center justify-center mb-6">
-            <Text
-              variant="title"
-              content="Future"
-              className="backdrop-blur-sm bg-gray-900 bg-opacity-50"
-            />
-          </header>
-          <motion.main
-            
-            variants={animationVariants}
-            initial="offScreenLeft"
-            whileInView="onScreen"
-            viewport={{ once: true }}
-            className="flex justify-center h-full w-full"
-          >
-            <Text content={contactInfo.objective} />
-          </motion.main>
-        </div>
         <Text
           variant="title"
           content="Contact"
@@ -74,7 +55,7 @@ export default function Contact(props: ContactProps){
         <div className="flex justify-center gap-7  items-start flex-row">
           {contactInfo.socialNetworks && (
             <>
-              <motion.a
+              <m.a
                 
                 variants={animationVariants}
                 initial="offScreenLeft"
@@ -82,6 +63,8 @@ export default function Contact(props: ContactProps){
                 viewport={{ once: true }}
                 href={contactInfo.socialNetworks[0].url}
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Linkedin profile"
                 className="flex items-center justify-center gap-3 hover:scale-110 transition-all"
               >
                 <LinkedinLogo size={32} />
@@ -90,13 +73,15 @@ export default function Contact(props: ContactProps){
                   content="LinkedIn"
                   className="hidden md:block"
                 />
-              </motion.a>
-              <motion.a
+              </m.a>
+              <m.a
                 initial={{opacity: 0}}
                 whileInView={{opacity: 100, transition: {delay: 1}}}
                 viewport={{ once: true }}
                 href={contactInfo.socialNetworks[1].url}
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Github profile"
                 className="flex items-center justify-center gap-3 hover:scale-110 transition-all"
               >
                 <GithubLogo size={32} />
@@ -105,8 +90,8 @@ export default function Contact(props: ContactProps){
                   content="Github"
                   className="hidden md:block"
                 />
-              </motion.a>
-              <motion.a
+              </m.a>
+              <m.a
                 
                 variants={animationVariants}
                 initial="offScreenRight"
@@ -114,6 +99,8 @@ export default function Contact(props: ContactProps){
                 viewport={{ once: true }}
                 href={contactInfo.socialNetworks[2].url}
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Github profile"
                 className="flex items-center justify-center gap-3 hover:scale-110 transition-all"
               >
                 <InstagramLogo size={32} />
@@ -122,9 +109,27 @@ export default function Contact(props: ContactProps){
                   content="Instagram"
                   className="hidden md:block"
                 />
-              </motion.a>
+              </m.a>
             </>
           )}
+        </div>
+        <div className="flex flex-col mt-4">
+          <header className="flex items-center justify-center mb-6">
+            <Text
+              variant="title"
+              content="Looking Forward"
+              className="backdrop-blur-sm bg-gray-900 bg-opacity-50"
+            />
+          </header>
+          <m.main
+            variants={animationVariants}
+            initial="offScreenLeft"
+            whileInView="onScreen"
+            viewport={{ once: true }}
+            className="flex justify-center h-full w-full"
+          >
+            <Text content={contactInfo.objective} />
+          </m.main>
         </div>
       </div>
     </section>

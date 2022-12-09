@@ -1,6 +1,6 @@
 import { Strategy } from "phosphor-react";
 import { Text } from "../../components/textComponent";
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { animationVariants } from "../../utils/animationVariants";
 
 type BackgroundProps = {
@@ -9,8 +9,9 @@ type BackgroundProps = {
 
 export default function Background(props: BackgroundProps){
     return (
+
       <div className="flex flex-col w-full items-baseline">
-        <motion.header
+        <m.header
           
           variants={animationVariants}
           initial="offScreenLeft"
@@ -24,8 +25,8 @@ export default function Background(props: BackgroundProps){
             content="Background"
             className="text-center"
           />
-        </motion.header>
-        <motion.main
+        </m.header>
+        <m.main
           
           variants={animationVariants}
           initial="offScreenLeft"
@@ -34,7 +35,8 @@ export default function Background(props: BackgroundProps){
           className="w-full rounded-md backdrop-blur-sm bg-gray-300 bg-opacity-50 text-center py-4 px-2 "
         >
           <Text variant="bold" content={props.careerDescription} />
-        </motion.main>
+        </m.main>
       </div>
+
     );
 }

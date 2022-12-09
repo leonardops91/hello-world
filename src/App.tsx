@@ -7,6 +7,7 @@ import Contact from "./pages/contact";
 import ToTopButton from "./components/toTopButton";
 import Home from "./pages/home";
 import Footer from "./components/footer";
+import { domAnimation, LazyMotion } from "framer-motion";
 
 type colorsStylesType = {
   [key: string]: { [key: string]: string };
@@ -42,7 +43,7 @@ function App() {
 
 
   return (
-    <>
+    <LazyMotion features={domAnimation}>
       {!data ? (
         <div
           className={`flex items-center justify-center w-screen h-screen ${colorClass}`}
@@ -66,7 +67,7 @@ function App() {
           <ToTopButton pageColor={pageColor} />
         </div>
       )}
-    </>
+    </LazyMotion>
   );
 }
 

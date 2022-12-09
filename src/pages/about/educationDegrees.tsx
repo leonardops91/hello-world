@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 import { Student } from "phosphor-react";
 import { Text } from "../../components/textComponent";
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { animationVariants } from "../../utils/animationVariants";
 
 type EducationDegreesProps = {
@@ -16,7 +16,7 @@ type EducationDegreesProps = {
 export default function EducationDegrees(props: EducationDegreesProps) {
   return (
     <div className="flex flex-col w-full items-center">
-      <motion.header
+      <m.header
         
         variants={animationVariants}
         initial="offScreenLeft"
@@ -26,12 +26,12 @@ export default function EducationDegrees(props: EducationDegreesProps) {
       >
         <Student size={32} />
         <Text variant="subtitle" content="General Education" />
-      </motion.header>
+      </m.header>
       <main className="flex flex-col-reverse gap-4 w-full">
         <ul className="flex gap-4 flex-col-reverse">
           {props.education?.map((course, index) => {
             return (
-              <motion.li
+              <m.li
                 
                 variants={animationVariants}
                 initial={index % 2 === 0 ? "offScreenRight" : "offScreenLeft"}
@@ -73,7 +73,7 @@ export default function EducationDegrees(props: EducationDegreesProps) {
                     )
                   </div>
                 </main>
-              </motion.li>
+              </m.li>
             );
           })}
         </ul>
