@@ -1,3 +1,5 @@
+import { m } from "framer-motion";
+import { animationVariants } from "../../utils/animationVariants";
 import { Text } from "../textComponent";
 
 type CardProps = {
@@ -12,9 +14,14 @@ type CardProps = {
 
 export default function Card(props: CardProps) {
     return (
-      <div
+      <m.div
+        variants={animationVariants}
+        initial={"offScreenLeft"}
+        whileInView="onScreen"
+        whileHover={{scale: 1.02}}
+        viewport={{ once: true }}
         id="card"
-        className={`group flex items-center min-h-[50%] h-[100%] w-full justify-center transition-all duration-[.25s] ease-linear overflow-hidden relative rounded-lg`}
+        className={`group flex items-center max-h-48 h-full w-full justify-between transition-all duration-[.25s] ease-linear overflow-hidden relative rounded-lg`}
       >
         <img
           src={
@@ -22,29 +29,34 @@ export default function Card(props: CardProps) {
             "https://geekflare.com/wp-content/uploads/2022/03/WhydoyouneedmockAPI.jpeg"
           }
           alt="image example"
-          className="h-full w-full z-10 transition-all duration-[.25s] scale-[1.2] ease-linear group-hover:scale-[1.5]"
+          className="h-48 w-80 transition-all duration-[.25s] ease-linear "
         />
         <div
           id="context"
-          className="flex flex-col items-center justify-center gap-7 px-4 w-full h-20 group-hover:h-full transition-all z-30 absolute text-white py-[10px] bg-black bg-opacity-70"
+          className="flex items-start justify-between  gap-7 py-4 px-6 w-full h-48 transition-all text-white  bg-black bg-opacity-70"
         >
-          <header className=" flex gap-3 items-center justify-center w-full text-center">
-            <Text variant="outlined" content={props.title} className="w-max" />{" "}
-            -
-            <Text variant="outlined" content={props.type} className="w-min" />
-          </header>
-          <main className="text-center flex gap-1 flex-col items-center w-full opacity-0 mb-[-140px] transition-all duration-[.25s] ease-linear group-hover:mb-0 group-hover:opacity-100">
+          <div className="flex gap-4 flex-col h-full w-full">
+            <header className="flex gap-3 items-center justify-start w-full text-center">
+              <Text
+                variant="subtitle"
+                content={props.title}
+                className="w-max"
+              />{" "}
+              -
+              <Text variant="subtitle" content={props.type} className="w-min" />
+            </header>
             <Text
               variant="bold"
               content={props.description}
-              className="text-center h-9"
+              className="text-start h-9"
             />
-            <div className="flex gap-2">
+          </div>
+          <main className="text-start flex gap-1 flex-col items-end justify-center w-fit h-full transition-all duration-[.25s] ease-linear">
               <a
                 target="_blanck"
                 rel="noopener noreferrer"
                 href={props.repositoryURL}
-                className="w-52 py-3 px-6 rounded-xl bg-transparent border-2 mt-3 group-hover:mb-3 cursor-pointer transition-all duration-[.25s] ease-linear text-sm outline-none hover:bg-white hover:text-black"
+                className="w-52 py-3 px-6 rounded-xl bg-transparent border-2 mt-3 cursor-pointer transition-all duration-[.25s] ease-linear text-sm text-center outline-none hover:bg-white hover:text-black"
               >
                 Acessar o repositório
               </a>
@@ -53,14 +65,13 @@ export default function Card(props: CardProps) {
                   target="_blanck"
                   rel="noopener noreferrer"
                   href={props.previewURL}
-                  className="w-52 py-3 px-6 rounded-xl bg-transparent border-2 mt-3 group-hover:mb-3 cursor-pointer transition-all duration-[.25s] ease-linear text-sm outline-none hover:bg-white hover:text-black"
+                  className="w-52 py-3 px-6 rounded-xl bg-transparent border-2 mt-3  cursor-pointer transition-all duration-[.25s] ease-linear text-sm text-center outline-none hover:bg-white hover:text-black"
                 >
                   Acessar o preview
                 </a>
               )}
-            </div>
           </main>
         </div>
-      </div>
+      </m.div>
     );
 }

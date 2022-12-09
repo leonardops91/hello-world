@@ -35,7 +35,7 @@ export default function Courses(props: EducationProps){
             <Text variant="subtitle" content="Main IT courses" />
           </m.header>
           <main className="w-full">
-            <m.ul className="flex flex-col items-center gap-4 w-full">
+            <ul className="flex flex-col items-center gap-4 w-full">
               {props.courses?.map((course, index) => {
                 return (
                   <m.li
@@ -85,7 +85,7 @@ export default function Courses(props: EducationProps){
                   </m.li>
                 );
               })}
-            </m.ul>
+            </ul>
           </main>
         </div>
       </div>

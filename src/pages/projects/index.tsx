@@ -25,13 +25,13 @@ export default function Projects(props: ProjectsProps){
     return (
       <section
         id={props.id}
-        className="max-w-[80%] w-full m-auto h-[110vh] pb-6 pt-[16vh] flex flex-col items-center "
+        className="max-w-[80%] w-full m-auto min-h-[110vh] h-fit p-[16vh] flex flex-col items-center "
       >
-        <div className="flex gap-4 flex-col items-center max-w-screen-xl w-full h-[80%]">
-          <header className="w-full">
+        <div className="flex gap-4 flex-col items-center max-w-screen-xl w-full h-full">
+          <header className="w-full mb-4">
             <Text variant="title" content="Projects" className="backdrop-blur-sm bg-gray-300 bg-opacity-50" />
           </header>
-          <main className="xl:grid gap-4 xl:grid-cols-2 xl:h-[100%] w-fit overflow-auto  flex flex-col">
+          <main className=" w-fit h-full flex gap-6 flex-col">
             {projectsInfo.projects.map(cardInfo => {
                 return <Card key={cardInfo.name} snapURL={cardInfo.snapURL || ""} title={cardInfo.name} type={cardInfo.type} description={cardInfo.description} repositoryURL={cardInfo.projectRepositoryURL} previewURL={cardInfo.projectpreviewURL || ""}  />
             })}
