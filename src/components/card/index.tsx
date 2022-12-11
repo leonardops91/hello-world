@@ -38,7 +38,7 @@ export default function Card(props: CardProps) {
               target="_blanck"
               rel="noopener noreferrer"
               href={props.previewURL}
-              className="flex items-center justify-center gap-1 absolute w-2/3 p-2 rounded-sm bg-opacity-70 bg-black text-white cursor-pointer transition-all ease-linear text-sm outline-none lg:opacity-0 group-hover:opacity-100 hover:border-b-2"
+              className="flex items-center justify-center gap-1 absolute w-2/3 p-2 rounded-sm bg-opacity-70 bg-black text-white cursor-pointer transition-all ease-linear text-sm outline-none lg:opacity-0 group-hover:opacity-100 hover:scale-110"
             >
               Acessar preview
               <Share />
