@@ -25,7 +25,7 @@ export default function Projects(props: ProjectsProps){
     return (
       <section
         id={props.id}
-        className="max-w-[80%] w-full m-auto min-h-[110vh] h-fit p-[16vh] flex flex-col items-center "
+        className="max-w-[80%] w-full m-auto min-h-[110vh] h-fit py-[16vh] flex flex-col items-center "
       >
         <div className="flex gap-4 flex-col items-center max-w-screen-xl w-full h-full">
           <header className="w-full mb-4">
