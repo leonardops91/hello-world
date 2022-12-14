@@ -89,7 +89,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={isLoading}
-            className={`disabled:bg-gray-400 border-2 hover:contrast-150 py-1 px-4 rounded-md
+            className={`disabled:bg-gray-400 border-2 hover:contrast-150 py-1 px-4 rounded-md disabled:hover:contrast-100
           `}
           >
             {isLoading ? (
