@@ -58,9 +58,8 @@ export default function Contact(props: ContactProps){
             {contactInfo.socialNetworks && (
               <>
                 <m.a
-                  variants={animationVariants}
-                  initial="offScreenLeft"
-                  whileInView="onScreen"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 100, transition: { delay: 1 } }}
                   viewport={{ once: true }}
                   href={contactInfo.socialNetworks[0].url}
                   target="_blank"
@@ -93,9 +92,8 @@ export default function Contact(props: ContactProps){
                   />
                 </m.a>
                 <m.a
-                  variants={animationVariants}
-                  initial="offScreenRight"
-                  whileInView="onScreen"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 100, transition: { delay: 1 } }}
                   viewport={{ once: true }}
                   href={contactInfo.socialNetworks[2].url}
                   target="_blank"

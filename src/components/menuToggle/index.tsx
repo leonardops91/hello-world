@@ -8,7 +8,7 @@ export default function MenuToggle(props: MenuToggleProps) {
   return (
     <div
       onClick={props.toggle}
-      className="relative  h-12 w-12 top-1 flex items-center justify-end lg:hidden z-30"
+      className="relative cursor-pointer  h-12 w-12 top-1 flex items-center justify-end lg:hidden z-30"
     >
       <div className="space-y-2 ">
         <div

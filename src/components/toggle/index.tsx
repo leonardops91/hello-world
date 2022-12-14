@@ -45,6 +45,7 @@ export function Toggle(props: toggleProps){
       border-purple-100 
       rounded-full
       h-11
+      cursor-pointer
       `}
       >
         {theme === "light" ? (

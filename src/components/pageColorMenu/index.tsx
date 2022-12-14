@@ -22,7 +22,7 @@ export function PageColorMenu(props: pageColorMenuProps) {
           <motion.div
             initial={{ top: 0 }}
             animate={{ top: '20px' }}
-            className={`h-fit w-fit absolute top-5 right-1/2 translate-x-1/2`}
+            className={`h-fit w-fit absolute top-5 right-1/2 translate-x-1/2 cursor-pointer`}
           >
             <PaintBucket
               onClick={() => setIsMenuOpen(true)}
