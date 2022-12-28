@@ -24,7 +24,7 @@ export default function KnowledgeLevel(props: KnowledgeCloudProps) {
           className="flex items-center justify-center gap-3 mb-4"
         >
           <DesktopTower size={32} />
-          <Text variant="subtitle" content="Knowledge Cloud" />
+          <Text variant="subtitle" content="Knowledge WordCloud" />
         </m.header>
         <m.main
           
