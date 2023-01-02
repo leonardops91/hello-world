@@ -5,6 +5,11 @@ on:
     branches:
       - master
 
+
+runs:
+  using: 'node16'
+  main: 'index.js'
+
 jobs:
   build:
     name: Build
