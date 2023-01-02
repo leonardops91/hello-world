@@ -8,7 +8,9 @@ on:
 jobs:
   build:
     name: Build
+    using: 'node16'
     runs-on: ubuntu-latest
+
 
     steps:
       - name: Checkout repo
