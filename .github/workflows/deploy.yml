@@ -13,9 +13,10 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-      - run: echo "VITE_API_URL=${{ env.VITE_API_URL}}" >> $GITHUB_ENV
       - name: Using env
         run: echo $VITE_API_URL
+      - name: Using env 2
+        run: echo $VITE_USER_ID
 
       - name: Setup Node
         uses: actions/setup-node@v1
