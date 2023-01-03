@@ -41,10 +41,6 @@ function App() {
     generalTheme === "dark" ? "before:opacity-80" : "before:opacity-10";
 
 
-  useEffect(() => {
-    console.log(data);
-    console.log(import.meta.env.VITE_API_URL);
-  }, [data] )
   return (
     <LazyMotion features={domAnimation}>
       {!data ? (
