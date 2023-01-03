@@ -13,10 +13,14 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-      - name: Using env
-        run: echo ${{github.VITE_API_URL}}
+      - name: setting env
+        env: 
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+      - name: setting env 2
+        env: 
+          VITE_USER_ID: ${{ secrets.VITE_USER_ID }}
       - name: Using env 2
-        run: echo ${{github.VITE_USER_ID}}
+        run: echo $VITE_USER_ID
 
       - name: Setup Node
         uses: actions/setup-node@v1
