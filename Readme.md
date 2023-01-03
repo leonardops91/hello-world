@@ -11,10 +11,8 @@
  <a href="#-Apresentação">Apresentação</a> •
  <a href="#-Layout">Layout</a> •
  <a href="#-tTecnologias">Tecnologias</a> •
- <a href="#-Rodando">Rodando</a> •
  <a href="#-Ferramentas">Ferramentas</a> •
  <a href="#-Deployment">Deployment</a> •
- <a href="#-Licença">Licença</a>
 </div>
 <br>
 <br>
