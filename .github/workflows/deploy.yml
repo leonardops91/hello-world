@@ -6,7 +6,7 @@ on:
       - master
 
 env: 
-  VITE_API_URL: ${{ secrets.VITE_API_URL }}
+  VITE_API_URL: testasdfasdf
   VITE_USER_ID: ${{ secrets.VITE_USER_ID }}
 
 jobs:
