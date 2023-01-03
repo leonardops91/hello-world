@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useGetUserInfoQuery } from "./graphql/generated";
 import About from "./pages/about";
 import Education from "./pages/education";
@@ -41,7 +41,8 @@ function App() {
     generalTheme === "dark" ? "before:opacity-80" : "before:opacity-10";
 
 
-
+  useEffect(() => {console.log(data);
+  }, [data] )
   return (
     <LazyMotion features={domAnimation}>
       {!data ? (
