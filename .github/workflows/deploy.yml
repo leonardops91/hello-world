@@ -48,4 +48,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          VITE_API_URL: ${{ secrets.VITE_API_URL}}
+          VITE_USER_ID: ${{ secrets.VITE_USER_ID}}
           publish_dir: ./dist
