@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-        run: echo "VITE_API_URL=${{ env.VITE_API_URL}}" >> $GITHUB_ENV
+      - run: echo "VITE_API_URL=${{ env.VITE_API_URL}}" >> $GITHUB_ENV
       - name: Using env
         run: echo $VITE_API_URL
 
