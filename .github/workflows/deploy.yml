@@ -16,9 +16,11 @@ jobs:
       - name: setting env
         env: 
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
+        run: echo $VITE_API_URL
       - name: setting env 2
         env: 
           VITE_USER_ID: ${{ secrets.VITE_USER_ID }}
+        run: echo $VITE_USER_ID
       - name: Using env 2
         run: echo $VITE_USER_ID
 
