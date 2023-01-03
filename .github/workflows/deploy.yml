@@ -14,9 +14,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
       - name: Using env
-        run: echo ${{secrets.VITE_API_URL}}
+        run: echo ${{env.VITE_API_URL}}
       - name: Using env 2
-        run: echo ${{secrets.VITE_USER_ID}}
+        run: echo ${{env.VITE_USER_ID}}
 
       - name: Setup Node
         uses: actions/setup-node@v1
