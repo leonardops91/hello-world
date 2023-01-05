@@ -43,7 +43,7 @@ export default function Modal(props: ModalProps) {
             className="rounded-md py-1 px-2 bg-gray-200 hover:bg-gray-300 text-gray-900 transition-all"
             target="_blanck"
             rel="noopener noreferrer"
-            href="https://gitlab.com/leonardops91/personalPage"
+            href="https://github.com/leonardops91/leonardops91.github.io"
           >
             Go to repository
           </a>
