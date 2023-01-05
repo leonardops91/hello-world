@@ -38,7 +38,11 @@ export default function Modal(props: ModalProps) {
             content="Now you can look the code of this page"
             className="text-center"
           />
-          <Text variant="bold" content="Have fun!" className="hidden lg:block" />
+          <Text
+            variant="bold"
+            content="Have fun!"
+            className="hidden lg:block"
+          />
           <a
             className="rounded-md py-1 px-2 bg-gray-200 hover:bg-gray-300 text-gray-900 transition-all"
             target="_blanck"
@@ -47,6 +51,17 @@ export default function Modal(props: ModalProps) {
           >
             Go to repository
           </a>
+          <div>
+            <a
+              title="Contador de Visitas do MegaContador"
+              href="https://megacontador.com.br/"
+            >
+              <img
+                src="https://megacontador.com.br/img-RE1aZU7BXyz60I8E-3.gif"
+                alt="Contador de visitas"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </>
