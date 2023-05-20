@@ -133,7 +133,7 @@ this in the docs: http://dev.apollodata.com/core/fragments.html#unique-names`):a
       name
     }
   }
-  courses {
+  courses(orderBy: startDate_DESC) {
     name
     institute
     startDate
