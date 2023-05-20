@@ -40,7 +40,7 @@ export default function Card(props: CardProps) {
               href={props.previewURL}
               className="flex items-center justify-center gap-1 absolute w-2/3 p-2 rounded-sm bg-opacity-70 bg-black text-white cursor-pointer transition-all ease-linear text-sm outline-none lg:opacity-0 group-hover:opacity-100 hover:scale-110"
             >
-              Acessar preview
+              Go to preview
               <Share />
             </a>
           )}
@@ -72,7 +72,7 @@ export default function Card(props: CardProps) {
               href={props.repositoryURL}
               className="w-52 py-3 px-6 rounded-xl bg-transparent border-2 mt-3 cursor-pointer transition-all duration-[.25s] ease-linear text-sm text-center outline-none hover:bg-white hover:text-black"
             >
-              Acessar o repositório
+              Go to repository
             </a>
           </main>
         </div>
